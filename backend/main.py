@@ -202,7 +202,7 @@ async def get_pending_sync() -> dict:
     """Get items pending sync to local system."""
     pending = [c for c in _captures.values() if not c.synced]
     return {
-        "captures": [c.model_dump() for c in pending],
+        "captures": [c.dict() for c in pending],
         "count": len(pending)
     }
 
